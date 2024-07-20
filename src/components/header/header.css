@@ -72,6 +72,7 @@ header {
 /* -------------------------------MEDIA QUERIES (SMALL DEVICES)-------------------------- */
 @media screen and (max-width: 600px) {
     header {
+        position: relative;
         height: 106vh;
     }
 
@@ -80,8 +81,10 @@ header {
     }
 
     .blob-container {
-        width: 20rem;
-        height: 20rem;
+    
+        
+        width: 15rem;
+        height: 15rem;
     }
 
     .me {

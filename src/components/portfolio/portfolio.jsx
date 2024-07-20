@@ -3,7 +3,7 @@ import './portfolio.css'
 import IMG1 from '../../assets/portfolio1.png'
 import IMG2 from '../../assets/porfolio2.png'
 import IMG3 from '../../assets/porfolio3.png'
-import IMG4 from '../../assets/portfolio4.jpg'
+import IMG4 from '../../assets/porfolio4.png'
 import IMG5 from '../../assets/portfolio5.png'
 import IMG6 from '../../assets/portfolio6.jpg'
 
@@ -42,7 +42,18 @@ const Portfolio = () => {
           <h3>Front End Gym React Website</h3>
           <div className="porfolio_item-cta">
           <a href="https://github.com" className='btn'>Github</a>
-          <a href="https://github.com" className='btn btn-primary'>Live Demo</a>
+          <a href="https://babuaravindh.github.io/react-gym-website/" className='btn btn-primary'>Live Demo</a>
+          </div>
+          
+      </article>
+      <article className="portfolio_item">
+        <div className="portfolio_tem-image">
+            <img src={IMG4} alt="" />
+        </div>
+          <h3>Travelix Website</h3>
+          <div className="porfolio_item-cta">
+          <a href="https://github.com" className='btn'>Github</a>
+          <a href="#" className='btn btn-primary'>Live Demo</a>
           </div>
           
       </article>

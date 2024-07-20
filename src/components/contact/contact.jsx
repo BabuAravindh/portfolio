@@ -37,20 +37,15 @@ const Contact = () => {
             <MdOutlineEmail className='contact_option-icons' />
             <h4>Email</h4>
             <h5>BabuAravindh637@gmail.com</h5>
-            <a href="mailto:BabuAravindh637@gmail.com" target='_blank' rel='noopener noreferrer'>Send a Message</a>
+            <a href="https://www.linkedin.com/in/babu-aravindh-88a97421a/" target='_blank' rel='noopener noreferrer'>Send a Message</a>
           </article>
           <article className="contact_option">
             <RiMessengerLine className='contact_option-icons' />
             <h4>Instagram</h4>
             <h5>Babu Aravindh</h5>
-            <a href="https://instagram.com" target='_blank' rel='noopener noreferrer'>Send a Message</a>
+            <a href="https://instagram.com/_babuaravindh_" target='_blank' rel='noopener noreferrer'>Send a Message</a>
           </article>
-          <article className="contact_option">
-            <BsWhatsapp className='contact_option-icons' />
-            <h4>WhatsApp</h4>
-            <h5>91123456789</h5>
-            <a href="https://api.whatsapp.com/send?phone=+91123456789" target='_blank' rel='noopener noreferrer'>Send a Message</a>
-          </article>
+          
         </div>
         {/* END OF CONTACT OPTIONS */}
         <form ref={form} onSubmit={sendEmail} autoComplete='off'>
