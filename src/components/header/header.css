@@ -1,121 +1,104 @@
-header{
-    height: 140vh;
-    padding-top: 7rem;
-    overflow: hidden;
+h5{
+    padding: 1rem;
 }
-.header_container{
+
+header {
+    height: 100vh; /* Adjust height as needed */
+    padding-top: 2rem;
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.header_container {
     text-align: center;
     height: 100%;
-    position:relative;
+    position: relative;
+    z-index: 1;
 }
-/* -------------------cta----------------------- */
-.cta{
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-}
- /* --------------------------HEADER SOCIALS------------------ */
- .header_socials{
-    display: flex;
-    flex-direction: column;
+
+.blob-container {
+    position: relative;
+    width: 30rem; 
+    height: 30rem; 
+    margin: 0 auto;
     align-items: center;
-    gap: 0.8rem;
-    position: absolute;
-    left: 0;
-    bottom: 3rem;
- }
- .header_socials::after{
-    content: '';
-    width: 1px;
-    background: var(--color-primary);
- }
+    top: 10%;
+}
+
+.tk-blob {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
 /* --------------------------   ME  ------------------ */
-.me{
-    background:#73C6FE;
-    width: 22rem;
-    height: 30rem;
+.me {
     position: absolute;
-    left:calc(50% - 11rem);
-    margin-top: 4rem;
-    border-radius: 12rem 12rem 0 0;
-    overflow: hidden;
-    padding: 5rem 1.5rem 1.5rem 1.5rem;
-}
-/* --------------------------   scroll down ------------------ */
-.scroll_down{
-    position: absolute;
-    right: -2.3rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20rem; /* Adjust width as needed */
+    height: 20rem; /* Adjust height as needed */
+    z-index: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.me img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    border: transparent; /* Ensure it matches the container's border radius */
+}
 
 
 /* -------------------------------MEDIA QUERIES (MEDIUM DEVICES)-------------------------- */
-@media screen and (max-width:1024px) {
-    header{
+@media screen and (max-width: 1024px) {
+    header {
         height: 81vh;
+    }
+
+    .blob-container {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .me {
+        width: 7.5rem;
+        height: 7.5rem;
     }
 }
 
-
-
-
-
-
 /* -------------------------------MEDIA QUERIES (SMALL DEVICES)-------------------------- */
-@media  screen and (max-width:600px) {
-    header{
+@media screen and (max-width: 600px) {
+    header {
         height: 106vh;
     }
-    .header_socials,.scroll_down{
+
+    .header_socials, .scroll_down {
         display: none;
+    }
+
+    .blob-container {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .me {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 18rem; /* Adjust width as needed */
+        height: 18rem; /* Adjust height as needed */
+        z-index: 1;
+    }
+    
+    .me img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: transparent; /* Ensure it matches the container's border radius */
     }
 }

@@ -10,31 +10,12 @@ const About = () => {
         <h5>Get To Know</h5>
         <h2>About me</h2>
         <div className="container about_container">
-          <div className="about_me">
-<div className="about_me-image">
-  <img src={Me} alt="me" />
-</div>
-          </div>
           <div className="about_content">
-          <div className="about_cards">
-            <article className='about_card'>
-              <FaAward className='about_icons'/>
-              <h5>Experience</h5>
-              <small>3+ year Experience</small>
-            </article>
-            <article className='about_card'>
-            <FiUser className='about_icons'/>
-              <h5>Clients</h5>
-              <small>200+ worldwide</small>
-            </article>
-            <article className='about_card'>
-              <VscFolderLibrary className='about_icons'/>
-              <h5>Project</h5>
-              <small>80+ completed</small>
-            </article>
-          </div>
+          
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam repellat dicta fuga consequatur numquam atque minus ipsum? Animi ullam excepturi harum qui optio aliquid consequatur velit similique. Ut, modi alias.
+          I am a passionate Full Stack Developer with a strong interest in both front-end and back-end development. 
+              Although I have zero professional experience, I have gained valuable skills through personal projects and self-learning. 
+              I am eager to apply my knowledge and grow in a professional setting.
           </p>
           <a href="#contact" className='btn btn-primary'>Let's Talk</a>
           </div>

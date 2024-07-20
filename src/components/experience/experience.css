@@ -12,7 +12,7 @@
     padding: 2.4rem 5rem;
     border-radius: 2rem;
     margin-left: 230px;
-    border: 1px solid transparent;
+    border: 1px solid #FA6E63;
     transition: var(--transition);
 }
 .experience_container > div:hover{
@@ -39,7 +39,6 @@
     margin-top: 6px;
     color: var(--color-primary);
 }
-
 
 
 

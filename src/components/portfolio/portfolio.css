@@ -10,6 +10,7 @@
     border: 1px solid transparent;
     transition: var(--transition);
 }
+
 .portfolio_item:hover{
     border-color: var(--color-bg-variant);
     background: transparent;
@@ -26,6 +27,7 @@
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
 
 
 

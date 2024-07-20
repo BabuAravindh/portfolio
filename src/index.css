@@ -10,16 +10,50 @@
     text-decoration: none;
 }
 :root{
-    --color-bg:#1f1f38;
-    --color-bg-variant:#2c2c6c;
-    --color-primary:#4db5ff;
-    --color-primary-variant:rgba(77,182,255,0.4);
-    --color-white :#fff;
-    --color-light:rgba(255,255,255,0.6);
+    --color-bg:#fff;
+    --color-bg-variant:#fff;
+    --color-primary:#F23633;
+    --color-primary-variant:#FA6E63;
+    --color-black :#000;
+    --color-light:#000;
     --transition:all 400ms ease;
 
 
     --container-width-lg:75%;
+
+    /* Primary: Sparkling Red */
+    --primary-100: #FFF5F2;
+    --primary-200: #FFCEC3;
+    --primary-300: #FDA193;
+    --primary-400: ;
+    --primary-500: #F23633;
+    --primary-600: #BF1212;
+    --primary-700: #8C0505;
+    --primary-800: #590101;
+    --primary-900: #260000;
+
+    /* Accent: Cold Heights */
+    --accent-100: #F2FCFF;
+    --accent-200: #BEF2FF;
+    --accent-300: #88EDFC;
+    --accent-400: #52E9F5;
+    --accent-500: #1EE5E8;
+    --accent-600: #0AB8B0;
+    --accent-700: #02877A;
+    --accent-800: #005749;
+    --accent-900: #00261E;
+
+    /* Neutral */
+    --neutral-100: #FCFBFA;
+    --neutral-200: #EAE5E4;
+    --neutral-300: #D7CFCE;
+    --neutral-400: #C5B9B9;
+    --neutral-500: #B3A4A4;
+    --neutral-600: #8F8383;
+    --neutral-700: #6C6363;
+    --neutral-800: #494242;
+    --neutral-900: #262222;
+    
     --container-width-md:86%;
     --container-width-sm:90%;
 }
@@ -33,9 +67,9 @@ html{
 body{
     font-family: "poppins",sans-serif;
     background: var(--color-bg);
-    color:var(--color-white);
+    color:var( --color-black);
     line-height: 1.7;
-    background-image: url(../src//assets/bg-texture.png);
+
 
 }
 /* --------------------------General Styles----------------- */
@@ -80,12 +114,13 @@ a:hover{
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor:pointer;
+    margin: 0.5rem;
     border: 1px solid var(--color-primary);
     transition: var(--transition);
 }
 .btn:hover{
-    background: var(--color-white);
-    color:var(--color-bg);
+    background: var(--color-primary);
+    color:var(--color-black);
     border-color: transparent;
 }
 .btn-primary{
