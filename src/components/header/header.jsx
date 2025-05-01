@@ -7,8 +7,8 @@ import HeaderSocial from './HeaderSocial';
 
 const Header = () => {
   return (
-    <header>
-      <div className="container header_container">
+    <header className=' minn-h-screen relative pl-8 pt-8'>
+      <div className=" ml-5 sm:ml-5 sm:mx-4 my-auto text-center h-full relative z-1 sm:relative w-[86%] sm:w-[90%]">
         <h5>Hello I'm</h5>
         <h1>Babu Aravindh</h1>
         <h5 className="text-light">Fullstack Developer</h5>
