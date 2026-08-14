@@ -1,0 +1,62 @@
+.github {
+  position: relative;
+}
+
+/* ===========================
+   STATS GRID
+   =========================== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   STAT CARD
+   =========================== */
+.statCard {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.streakCard {
+  grid-column: 1 / -1;
+}
+
+.statImage {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===========================
+   PROFILE LINK
+   =========================== */
+.profileLink {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media screen and (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .streakCard {
+    grid-column: 1;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+}
