@@ -1,0 +1,252 @@
+/* ===========================
+   TERMINAL WINDOW (BASE)
+   =========================== */
+.window {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* ===========================
+   THEME STYLES
+   =========================== */
+
+/* VS Code Theme */
+.vscode {
+  background: rgba(30, 30, 46, 0.85); /* VS Code dark transparent */
+  color: #cdd6f4;
+  border-color: rgba(137, 180, 250, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(137, 180, 250, 0.05);
+}
+
+.vscode .titleBar {
+  background: rgba(17, 17, 27, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #a6adc8;
+}
+
+.vscode .cursor {
+  background: #f5e0dc;
+}
+
+/* Matrix Theme */
+.matrix {
+  background: rgba(0, 0, 0, 0.9);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.15);
+}
+
+.matrix .titleBar {
+  background: #000;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.matrix .cursor {
+  background: #10b981;
+}
+
+/* Dracula Theme */
+.dracula {
+  background: rgba(40, 42, 54, 0.88);
+  color: #f8f8f2;
+  border-color: rgba(189, 147, 249, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(189, 147, 249, 0.07);
+}
+
+.dracula .titleBar {
+  background: rgba(30, 31, 41, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #6272a4;
+}
+
+.dracula .cursor {
+  background: #f8f8f0;
+}
+
+/* ===========================
+   TITLE BAR
+   =========================== */
+.titleBar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  user-select: none;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.closeDot { background: #ff5f56; }
+.minimizeDot { background: #ffbd2e; }
+.expandDot { background: #27c93f; }
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.techStack {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* ===========================
+   CONSOLE CONSOLE
+   =========================== */
+.console {
+  flex-grow: 1;
+  padding: 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Custom Scrollbar for Terminal Output console */
+.console::-webkit-scrollbar {
+  width: 6px;
+}
+
+.console::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.console::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+}
+
+.vscode::-webkit-scrollbar-thumb { background: rgba(137, 180, 250, 0.2); }
+.matrix::-webkit-scrollbar-thumb { background: rgba(16, 185, 129, 0.3); }
+.dracula::-webkit-scrollbar-thumb { background: rgba(189, 147, 249, 0.2); }
+
+/* ===========================
+   INPUT PROMPT LINE
+   =========================== */
+.inputLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.prompt {
+  white-space: nowrap;
+}
+
+.inputWrapper {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+}
+
+.typedText {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+.blinking {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { background-color: transparent }
+  50% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .window {
+    height: 100vh;
+    height: -webkit-fill-available;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .console {
+    padding: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .titleBar {
+    height: 35px;
+    padding: 0 0.75rem;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+
+  .techStack {
+    display: none;
+  }
+
+  .console {
+    padding: 0.5rem;
+  }
+
+  .typedText, .prompt {
+    font-size: 13px;
+  }
+
+  .cursor {
+    height: 15px;
+    width: 6px;
+  }
+}
+

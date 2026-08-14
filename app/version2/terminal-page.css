@@ -1,0 +1,107 @@
+/* Load JetBrains Mono font locally for terminal page */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Centered terminal window viewport */
+.terminal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.terminal-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+.terminal-container.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Retro CRT Monitor Overlay Screen Glow */
+.crt-glow-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  opacity: 0.15;
+  animation: crt-flicker 0.15s infinite;
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.18; }
+  100% { opacity: 0.14; }
+}
+
+/* Screen curvature overlay border glow */
+.crt-glow-overlay::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* Responsive full viewport on smaller displays */
+@media screen and (max-width: 768px) {
+  .terminal-container {
+    padding: 0;
+  }
+}
+
+/* ============================================
+   GLOBAL COLOR UTILITIES FOR TERMINAL
+   ============================================ */
+.color-green {
+  color: #a6e3a1 !important;
+}
+
+.color-blue {
+  color: #89b4fa !important;
+}
+
+.color-purple {
+  color: #cba6f7 !important;
+}
+
+.color-peach {
+  color: #fab387 !important;
+}
+
+.color-red {
+  color: #f38ba8 !important;
+}
+
+.color-cyan {
+  color: #89dceb !important;
+}
+
+.color-yellow {
+  color: #f9e2af !important;
+}
+
+.color-dim {
+  color: #7f849c !important;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
