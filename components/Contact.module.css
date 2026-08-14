@@ -1,0 +1,250 @@
+.contact {
+  position: relative;
+}
+
+/* ===========================
+   CONTACT GRID
+   =========================== */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   CONTACT OPTIONS
+   =========================== */
+.contactOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contactCard:hover {
+  transform: translateX(5px) !important;
+}
+
+.cardIcon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cardTitle {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cardValue {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+.cardLink {
+  font-size: var(--text-xs);
+  color: var(--emerald-400);
+  font-weight: 500;
+  margin-top: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.contactCard:hover .cardLink {
+  color: var(--emerald-300);
+}
+
+/* ===========================
+   FORM
+   =========================== */
+.form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ===========================
+   FORM GROUP (Floating Label)
+   =========================== */
+.formGroup {
+  position: relative;
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem 0.75rem 0.5rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--neutral-700);
+  outline: none;
+  transition: border-color var(--transition-base);
+  resize: none;
+}
+
+.formInput:focus {
+  border-color: var(--emerald-500);
+}
+
+.formLabel {
+  position: absolute;
+  left: 0.75rem;
+  top: 1rem;
+  font-size: var(--text-base);
+  color: var(--text-tertiary);
+  pointer-events: none;
+  transition: all var(--transition-fast);
+  transform-origin: left;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:not(:placeholder-shown) ~ .formLabel {
+  top: -0.25rem;
+  font-size: var(--text-xs);
+  color: var(--emerald-400);
+  font-weight: 600;
+}
+
+.formLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-emerald);
+  transition: width var(--transition-base);
+}
+
+.formInput:focus ~ .formLine {
+  width: 100%;
+}
+
+.formTextarea {
+  min-height: 120px;
+}
+
+/* ===========================
+   SUBMIT BUTTON
+   =========================== */
+.submitBtn {
+  align-self: flex-start;
+  padding: 0.85rem 2rem;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===========================
+   TOAST
+   =========================== */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  z-index: 2000;
+  animation: slideUp 0.4s ease;
+  backdrop-filter: blur(20px);
+}
+
+.toastIcon {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--emerald-400);
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media screen and (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contactOptions {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .contactCard {
+    min-width: 180px;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .form {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contactOptions {
+    flex-direction: column;
+  }
+
+  .contactCard {
+    flex-direction: row;
+    min-width: auto;
+    text-align: left;
+  }
+
+  .toast {
+    width: 90%;
+    font-size: var(--text-xs);
+  }
+}
